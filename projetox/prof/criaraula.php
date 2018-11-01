@@ -34,10 +34,15 @@
 
 		while ($r = mysqli_fetch_assoc($res)) {
 			echo "<table>";
-			echo "<tr><td>Aluno</td><td>Presença</td></tr>";
-			//echo "<tr>";
+			echo "<tr><td>Aluno</td><td>Lista de chamada</td></tr>";
+			echo "<tr>";
 			echo "<td>".$r['NomeAluno']."</td>";
-			//echo "</tr>";
+			echo "<td>";
+			echo "<form action='' method='POST'";
+			echo "<td>"."Presente <input type='radio' name='opcao' value='Presente'>"."<br>Faltou <input type='radio' name='opcao' value='Faltou'> "."</td>";
+			echo "</form>";
+			echo "</td>";
+			echo "</tr>";
 			echo "</table>";
 		}
 	?>
