@@ -1,50 +1,50 @@
+<?php  
+	include("../conexao.php");
+	mysqli_set_charset($conexao, "utf-8");
+	date_default_timezone_set('America/Sao_Paulo');
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Lançar Aula</title>
 </head>
-<style type="text/css">
-        *{
-            margin: 0;
-            padding: 0;
-
-        }
-        table{
-            border:1px solid;
-            padding: 5px;
-        }
-        td{
-            border: 1px solid lightgray;
-            font-size: 1em;
-            padding: 5px
-        }
-        button{
-            padding: 5px
-        }
-        </style>
 <body>
 	<a href="index_prof.php"><button>Voltar</button></a>
+	<form action="" method="POST">
+		Conteudo:
+		<input type="text" name="conteudo" placeholder="Insira o conteúdo da aula" required="true">
+		<input type="date" name="dataaula">
+		<input type="submit" name="inserir" value="INSERIR">
+		<input type="reset" name="limpar" value="LIMPAR">
+
+	</form>
 	<?php
-		include("../conexao.php");
-		$turma = $_GET['cod'];
+		$turma = $_GET['cod']; 
+		if(isset($_POST['inserir'])){
+		$conteudo = $_POST['conteudo'];
+		$dataaula = $_POST['dataaula'];
 
-		$sql = "SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno from aluno inner join matricula on matricula.turma_cod = $turma AND matricula.aluno_cod = aluno.cod ";
+		$aula = mysqli_query($conexao,"INSERT INTO aulas(conteudo, dataaula, turma_cod) VALUES ('$conteudo','$dataaula', '$turma')");
+		if(!$aula){
+			header("location:index_prof.php?false");
+			echo "Erro ao realizar cadastro da aula. Tente outra vez.";
+			exit;
+		}else{
+			header("location:index_prof.php?true");
+			echo "Cadastro concluído com sucesso!";
+		}
+	}
 
-		$res = mysqli_query($conexao, $sql);
+		
+
+		//$sql = "SELECT * aulas where turma_cod = $turma";
+
+		/*$res = mysqli_query($conexao, $sql);
 
 		while ($r = mysqli_fetch_assoc($res)) {
-			echo "<table>";
-			echo "<tr><td>Aluno</td><td>Lista de chamada</td></tr>";
-			echo "<tr>";
-			echo "<td>".$r['NomeAluno']."</td>";
-			echo "<td>";
-			echo "<form action='' method='POST'";
-			echo "<td>"."Presente <input type='radio' name='opcao' value='Presente'>"."<br>Faltou <input type='radio' name='opcao' value='Faltou'> "."</td>";
-			echo "</form>";
-			echo "</td>";
-			echo "</tr>";
-			echo "</table>";
-		}
+			
+		}*/
+		echo "<a href='lancarfrequencia.php?cod=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>"
 	?>
 
 </body>
