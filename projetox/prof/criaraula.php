@@ -31,19 +31,8 @@
 			exit;
 		}else{
 			header("location:index_prof.php?true");
-			echo "Cadastro concluído com sucesso!";
 		}
 	}
-
-		
-
-		//$sql = "SELECT * aulas where turma_cod = $turma";
-
-		/*$res = mysqli_query($conexao, $sql);
-
-		while ($r = mysqli_fetch_assoc($res)) {
-			
-		}*/
 		echo "<a href='lancarfrequencia.php?cod=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>"
 	?>
 
