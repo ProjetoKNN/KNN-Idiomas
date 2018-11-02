@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Out-2018 às 09:48
--- Versão do servidor: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Generation Time: 02-Nov-2018 às 02:15
+-- Versão do servidor: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,6 +69,13 @@ CREATE TABLE `aulas` (
   `dataaula` date NOT NULL,
   `turma_cod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `aulas`
+--
+
+INSERT INTO `aulas` (`cod`, `conteudo`, `dataaula`, `turma_cod`) VALUES
+(2, 'NHA', '0045-05-14', 11);
 
 -- --------------------------------------------------------
 
@@ -372,31 +379,43 @@ ALTER TABLE `turma`
 --
 ALTER TABLE `aluno`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `aulas`
+--
+ALTER TABLE `aulas`
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `interessados`
 --
 ALTER TABLE `interessados`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pagamentos`
 --
 ALTER TABLE `pagamentos`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- Constraints for dumped tables
 --
@@ -418,7 +437,7 @@ ALTER TABLE `boletim`
 --
 ALTER TABLE `frequencia`
   ADD CONSTRAINT `fk_frequencia_aluno1` FOREIGN KEY (`aluno_cod`) REFERENCES `aluno` (`cod`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_frequencia_aulas1` FOREIGN KEY (`aulas_cod`) REFERENCES `aulas` (`cod`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `frequencia_ibfk_1` FOREIGN KEY (`aulas_cod`) REFERENCES `aulas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `login`
