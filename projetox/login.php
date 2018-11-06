@@ -1,4 +1,5 @@
 <?php
+	//Verifica qual o tipo de privilégio o usuário logado contém, sejam eles "usr" = usuário normal, "prf" = professor e "adm" = administrador.
 	session_start();
 	if($_SESSION['privilegio']){
 		if($_SESSION['privilegio'] == "usr")
@@ -14,7 +15,7 @@
 			header('location:adm/adm_func.php');
 		}
 	}else
-	{
-		header('location:index.php?status=2');
-	}
+		{
+			header('location:index.php?status=2');
+		}
 ?>

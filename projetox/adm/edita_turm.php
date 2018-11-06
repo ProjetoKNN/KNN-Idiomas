@@ -54,7 +54,6 @@
 
                 $s = "SELECT professor.nome FROM professor WHERE professor.nome = '$prof'";
                 $r =mysqli_query($conexao,$s); 
-                //echo $s;
                 $res = mysqli_fetch_assoc($r); 
                 ?>
                 <select name='prof'>

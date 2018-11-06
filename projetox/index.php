@@ -39,6 +39,7 @@
 		<input type="reset" value="Limpar">
 	</form>
 	<?php
+		//Mostra o aviso na tela do usuário de acordo com o status que for recebido da páginas relacionadas ao sistema de Login.
 			if(isset($_GET['status']))
 			{
 				if(intval($_GET['status']) == 0){

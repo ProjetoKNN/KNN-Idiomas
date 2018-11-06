@@ -89,7 +89,7 @@
 	</body>
 </html>
 <?php
-	//inserindo os dados de alunos.
+	//Pega os "name" do formulário acima e coloca nas variáveis através do método POST.
 	if(isset($_POST['inserir'])){
 		$nome = $_POST['nome'];
 		$datanasc = $_POST['data'];
@@ -112,7 +112,10 @@
 		$alergia = $_POST['alergia'];
 		$cidade = $_POST['cidade'];
 
+		//Faz a inserção dos dados digitados pelo usuário no formulário acima na tabela "aluno" contida no BD.
 		$aluno = mysqli_query($conexao,"INSERT INTO aluno(nome, cpf, rg, datanascimento, telefonealuno, nomeresponsavel, telefoneresponsavel, rua, numero, bairro, cidade, estado, cep, email, alergiaalimentar, remedio, alergia) VALUES ('$nome','$cpf', '$rg', '$datanasc', '$contato', '$nomeresp', '$contatoresp', '$rua', '$nmr', '$bairro', '$cidade', '$uf', '$cep', '$email','$alergiaalimentar','$remedio','$alergia')");
+
+		//Cria um login para o aluno inserido acima.
 		$login = mysqli_query($conexao,"INSERT INTO login(usuario, senha, privilegio, al) VALUES ('$login', '$senha', '$priv', '$cpf')");
 		if(!$aluno){
 			header("location:inserir_al.php?false");

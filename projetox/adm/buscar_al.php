@@ -57,7 +57,7 @@
                         </form><br><br>
                         <caption>Resultado da busca:</caption>
                             <?php 
-                                //Estabelece a conexao com o mysql
+                                //Estabelece a conexao com o mysql.
                                 include("../conexao.php");
                                 if(!$conexao){
                                     echo "Ops.. Erro na conexão.";
@@ -66,14 +66,14 @@
                                 //Carrega os dados
                                 if(isset($_POST['buscar']))
                                 {
-                                    $teste = $_POST['busca'];
-                                    $sql = "SELECT * FROM aluno WHERE nome LIKE '%$teste%'";
+                                    $pesquisa = $_POST['busca'];
+                                    $sql = "SELECT * FROM aluno WHERE nome LIKE '%$pesquisa%'";
                                     $consulta = mysqli_query($conexao, $sql);
                                         if(!$consulta){
                                             echo "Erro ao realizar consulta. Tente outra vez.";
                                             exit;
                                         }
-                                    //se tudo deu certo, exibe os dados
+                                    //Se tudo der certo, exibe os dados
                                     while($dados = mysqli_fetch_assoc($consulta)){
                                         echo "<table>";
                                         echo "<tr><td>Nome</td><td>CPF</td><td>RG</td><td>Data Nasc</td><td>Contato Aluno</td><td>Endereço</td><td>Bairro</td><td>Cidade</td><td>Estado</td><td>CEP</td><td>E-mail</td><td>Alergia alimentar</td><td>Alergia</td><td>Remédio</td><td>Nome do responsável</td><td>Telefone do responsável</td><td>Editar</td><td>Apagar</td></tr>";
@@ -96,8 +96,8 @@
                                         echo "<td>" .$dados['nomeresponsavel']. "</td>";
                                         echo "<td>" .$dados['telefoneresponsavel']. "</td>";
 
-                                        // Cria um formulário para enviar os dados para a página de edição 
-                                        // Colocamos os dados dentro input hidden
+                                        // Cria um formulário para enviar os dados para a página de edição. 
+                                        // Colocamos os dados dentro input hidden.
                                         echo "<td>";
                                         echo "<form action='edita_al.php' method='post'>";
                                         echo "<input name='cod' type='hidden' value='" .$dados['cod']. "'>";
@@ -122,8 +122,8 @@
                                         echo "</form>";
                                         echo "</td>";
 
-                                        // Cria um formulário para remover os dados 
-                                        // Colocamos o id dos dados a serem removidos dentro do input hidden
+                                        // Cria um formulário para remover os dados. 
+                                        // Colocamos o id dos dados a serem removidos dentro do input hidden.
                                         echo "<td>";
                                         echo "<form action='php/remove_al.php' method='post'>";
                                         echo "<input name='cod' type='hidden' value='" .$dados['cod']. "'>";

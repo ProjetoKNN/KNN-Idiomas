@@ -30,7 +30,6 @@ function formatar(mascara, documento){
             $cpf = filter_input(INPUT_POST, 'cpf');
             $rg = filter_input(INPUT_POST, 'rg');
             $datanasc = filter_input(INPUT_POST, 'datanasc');
-            //$datamat = filter_input(INPUT_POST, 'datamat');
             $rua = filter_input(INPUT_POST, 'rua');
             $nmr = filter_input(INPUT_POST, 'nmr');
             $contato = filter_input(INPUT_POST, 'contatoaluno');

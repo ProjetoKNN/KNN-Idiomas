@@ -65,10 +65,10 @@
                         //Carrega os dados
                         if(isset($_POST['busca']))
                         {
-                            $teste = $_POST['busca'];
+                            $pesquisa = $_POST['busca'];
 
                            
-                            $consulta = mysqli_query($conexao,"SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno, turma.nome as NomeTurma, turma.cod as CodTurma, curso.nome as NomeCurso, matricula.datamatricula as datamatricula, matricula.datapagamento as datapagamento FROM matricula INNER JOIN aluno ON aluno.cod = matricula.aluno_cod JOIN turma ON turma.cod = matricula.turma_cod JOIN curso ON curso.nome = matricula.curso where aluno.nome LIKE '%$teste%'");
+                            $consulta = mysqli_query($conexao,"SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno, turma.nome as NomeTurma, turma.cod as CodTurma, curso.nome as NomeCurso, matricula.datamatricula as datamatricula, matricula.datapagamento as datapagamento FROM matricula INNER JOIN aluno ON aluno.cod = matricula.aluno_cod JOIN turma ON turma.cod = matricula.turma_cod JOIN curso ON curso.nome = matricula.curso where aluno.nome LIKE '%$pesquisa%'");
 
                             while($dados = mysqli_fetch_assoc($consulta))
                             {

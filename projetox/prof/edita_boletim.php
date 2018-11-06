@@ -10,7 +10,6 @@
 			<a href="buscar_turmas.php"><button>Voltar</button></a>
 				<?php 
 					$CodAluno = filter_input(INPUT_POST, 'cod');
-					//echo "AQUI: ". $CodAluno;
 
 					$sql = "SELECT * FROM boletim where aluno_cod = '$CodAluno'";
 

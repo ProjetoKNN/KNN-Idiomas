@@ -24,7 +24,8 @@
         }
         </style>
 <body>
-	<a href="criaraula.php"><button>Voltar</button></a>
+	<a href="index_prof.php"><button>Voltar</button></a>
+	<!-- Manda dados contidos nesse formulário para a página "frequencia.php".-->
 	<form action="frequencia.php" method="POST">
 		<input type="submit" name="inserir" value="INSERIR">
 		<input type="reset" name="limpar" value="LIMPAR">
@@ -33,21 +34,19 @@
 			include("../conexao.php");
 			session_start();
 
-			//$turma = $_GET['codt'];
-			//$aula = $_GET['cod'];
-
+			//Pega os códigos que foram passados pelo GET e os inserem em uma variável de sessão.
 			$_SESSION['aulita'] = $_GET['cod'];
 			$_SESSION['turmita'] = $_GET['codt'];
+
+			//Passa o código da turma para um variável, para que possa ser utilizada no "sql" abaixo.
 			$turma = $_SESSION['turmita'];
 
+			//Seleciona alguns dados de aluno de acordo com a turma que ele foi matriculado.
 			$sql = "SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno from aluno inner join matricula on matricula.turma_cod = $turma AND matricula.aluno_cod = aluno.cod ";
 
 			$res = mysqli_query($conexao, $sql);
 
-			//echo "<br><tr><td><label name ='turma'>".$turma."</label></td></tr><br>";
-			//echo "<tr><td><label name ='aula'>".$aula."</label></td></tr><br>";
 			echo "<tr>";
-			//echo "<tr><td>Aluno</td><td>Lista de chamada</td></tr>";
 			echo "<table>";
 			while ($r = mysqli_fetch_assoc($res)) {
 				echo "<tr>";

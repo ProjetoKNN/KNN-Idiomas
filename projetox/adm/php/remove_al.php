@@ -1,21 +1,21 @@
 <?php 
-    //recebe o id dos dados que serão apagados
+    //Recebe o id dos dados que serão apagados.
     $curso = filter_input(INPUT_POST, 'curso');
 
-    //estabelece a conexão
+    //Estabelece a conexão.
     include("../../conexao.php");
     if(!$conexao){
         echo "Ops.. Erro na conexão.";
         exit;
     }
-    //Executa a query
+    //Executa a query.
     $sql = "DELETE FROM curso WHERE nome=".$curso;
     $remove = mysqli_query($conexao, $sql);
-    //Se falhou, redireciona pra exibe.php com remove igual a false 
+    //Se falhou, redireciona pra buscar_al.php com remove igual a false. 
     if(!$remove){
-        header("Location:../buscar_curso.php?remove=false");
+        header("Location:../buscar_curso.php?remocao=false");
         exit;
     }
-    //se tudo deu certo, redireciona pra exibe.php com remove igual a true
+    //Se tudo deu certo, redireciona pra buscar_al.php com remove igual a true.
     header("Location:../buscar_curso.php?remocao=true");
 ?>

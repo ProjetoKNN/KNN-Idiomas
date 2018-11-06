@@ -17,8 +17,7 @@
 	<a href="boletim.php"><button>Boletim</button></a>
 	<hr>
 	<div>
-		<?php 
-		
+		<?php 	
 			$user = $_SESSION['usuario'];
 						
 			$query = "SELECT login.al as cpf FROM login where usuario = '".$user."'";
@@ -29,7 +28,6 @@
 			$cpf = $res['cpf'];
 			
 			$sql = "SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno, aluno.cpf as alunocpf, aluno.rua as alunorua, aluno.rg as alunorg, aluno.bairro as alunobairro, aluno.email as alunoemail FROM aluno where aluno.cpf = '".$cpf."'";
-			
 			
 			$consulta = mysqli_query($conexao, $sql);
 				if(!$consulta){
@@ -45,9 +43,7 @@
 	            	echo "E-mail: ".$dados['alunoemail']."<br>";
 	            	echo "<hr>";
 	            	$_SESSION['CodAluno'] = $dados['CodAluno'];
-	            }
-	            	
-	            	
+	            }     	
 		?>
 	</div>
 </body>

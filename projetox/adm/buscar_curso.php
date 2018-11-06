@@ -27,18 +27,18 @@
             <body>
             	<?php 
                     //Área de notificações
-                    //Se existe a variável remocao, então
+                    //Se existe a variável remocao, então.
                     if( isset($_POST['remocao'])){
-                            //Se remoção tem true, os dados foram removidos
+                            //Se remoção tem true, os dados foram removidos.
                         if( $_POST['remocao'] == "true" ){
                             echo "<p>Os dados foram removidos.</p>";            
                         }else{
                             echo "<p>Não foi possivel remover os dados.</p>";
                         }
                     } 
-                        //Se existe a variável alteração, então
+                        //Se existe a variável alteração, então.
                         if( isset($_GET['alteracao']) ){
-                            //Se alteracao tem true, os dados foram alterados
+                            //Se alteracao tem true, os dados foram alterados.
                             if( $_GET['alteracao'] == "true" ){
                                 echo "<p>Os dados foram alterados.</p>";            
                             }else{
@@ -65,9 +65,9 @@
                         //Carrega os dados
                         if(isset($_POST['busca']))
                         {
-                            $teste = $_POST['busca'];
+                            $pesquisa = $_POST['busca'];
 
-                            $sql = "SELECT * FROM curso WHERE nome LIKE '%$teste%'";
+                            $sql = "SELECT * FROM curso WHERE nome LIKE '%$pesquisa%'";
                                 if(!$sql)
                                 {
                                     echo "Erro ao realizar consulta. Tente outra vez.";

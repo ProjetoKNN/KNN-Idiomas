@@ -29,12 +29,12 @@
     $sql = "UPDATE aluno SET nome='" . $NovoNome . "', cpf='" . $NovoCpf . "', rg='".$NovoRg."', datanascimento='".$NovaDataNasc."',telefonealuno='".$NovoContato. "',rua='".$NovaRua."',numero='".$NovoNmr."', bairro='".$NovoBairro."', cidade='".$NovaCidade."', estado='".$NovoEstado."', cep='".$NovoCep."', email='".$NovoEmail."', alergiaalimentar='".$NovaAlergAlimentar."', remedio='".$NovoRemedio."', alergia='".$NovaAlergia."' WHERE cod='".$cod."'";
     $update = mysqli_query($conexao, $sql);
 
-    //Se não deu certo, redireciona pra exibe.php com alteracao igual a false
+    //Se não deu certo, redireciona pra buscar_al.php com alteracao igual a false
     if(!$update){
         header("Location:../buscar_al.php?alteracao=false");
         exit;
     }else{
-    //se tudo deu certo, redireciona pra exibe.php com alteracao igual a true
+    //Se tudo deu certo, redireciona pra buscar_al.php com alteracao igual a true
     header("Location:../buscar_al.php?alteracao=true");
     }
 ?>

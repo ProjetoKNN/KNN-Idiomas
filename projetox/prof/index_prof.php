@@ -17,6 +17,7 @@
 		<?php 
 		session_start();
 			$user = $_SESSION['usuario'];
+			//Puxa o perfil do professor que é dono do usuário inserido ao logar.
 			$query = "SELECT login.pr as cpf FROM login where usuario = '".$user."'";
 			
 			$resQuery = mysqli_query($conexao, $query);
@@ -24,7 +25,6 @@
 			$res = mysqli_fetch_assoc($resQuery);
 			$cpf = $res['cpf'];
 			
-
 			$sql = "SELECT professor.nome as NomeProf, professor.cod as CodProf, professor.cpf as profcpf, professor.rua as profrua, professor.rg as profrg, professor.bairro as profbairro, professor.email as profemail FROM professor where professor.cpf = '".$cpf."'";	
 			
 			
@@ -50,7 +50,7 @@
 
 	        $resQuery2 = mysqli_query($conexao, $sql2);
 	        while($res2 = mysqli_fetch_assoc($resQuery2)){
-	        	
+	        	//Passa o código da turma através de GET, tanto para a página "buscar_turmas.php" como para "criaraula.php" também.
 	        	echo "<a href='buscar_turmas.php?cod=".$res2['codturma']."'>".$res2['nome']."</a>";
 	        	echo "<a href='criaraula.php?cod=".$res2['codturma']."'>"." <button>Lançar aula</button>"."</a><br>";
 	    	}
