@@ -2,6 +2,7 @@
 	include("../conexao.php");
 	mysqli_set_charset($conexao, "utf-8");
 	date_default_timezone_set('America/Sao_Paulo');
+	session_start();	
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,19 +22,25 @@
 	<?php
 		$turma = $_GET['cod']; 
 		if(isset($_POST['inserir'])){
-		$conteudo = $_POST['conteudo'];
-		$dataaula = $_POST['dataaula'];
+			$conteudo = $_POST['conteudo'];
+			$dataaula = $_POST['dataaula'];
 
-		$aula = mysqli_query($conexao,"INSERT INTO aulas(conteudo, dataaula, turma_cod) VALUES ('$conteudo','$dataaula', '$turma')");
-		if(!$aula){
-			header("location:index_prof.php?false");
-			echo "Erro ao realizar cadastro da aula. Tente outra vez.";
-			exit;
-		}else{
-			header("location:index_prof.php?true");
+			$query1 = "SELECT MAX(cod) FROM aulas";
+
+			$cod = mysqli_query($conexao, $query1);
+			$codigo = mysqli_fetch_assoc($cod);
+			$num = $codigo['MAX(cod)']+1;
+
+			$query = "INSERT INTO aulas(cod, conteudo, dataaula, turma_cod) VALUES ('$num','$conteudo','$dataaula', '$turma')";
+			$aula = mysqli_query($conexao,$query);
+
+				if(!$aula){
+					//header("location:index_prof.php?false");
+					echo "Erro ao realizar cadastro da aula. Tente outra vez.";
+					exit;
+				}
 		}
-	}
-		echo "<a href='lancarfrequencia.php?cod=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>"
+		echo "<a href='lancarfrequencia.php?cod=".$num."&codt=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>"
 	?>
 
 </body>

@@ -1,3 +1,4 @@
+<PHP
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,58 +25,39 @@
         </style>
 <body>
 	<a href="criaraula.php"><button>Voltar</button></a>
-	<form action="" method="POST">
+	<form action="frequencia.php" method="POST">
 		<input type="submit" name="inserir" value="INSERIR">
 		<input type="reset" name="limpar" value="LIMPAR">
 
-	</form>
-	<?php
-		include("../conexao.php");
-		$turma = $_GET['cod'];
+		<?php
+			include("../conexao.php");
+			session_start();
 
-		$sql = "SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno from aluno inner join matricula on matricula.turma_cod = $turma AND matricula.aluno_cod = aluno.cod ";
+			//$turma = $_GET['codt'];
+			//$aula = $_GET['cod'];
 
-		$res = mysqli_query($conexao, $sql);
+			$_SESSION['aulita'] = $_GET['cod'];
+			$_SESSION['turmita'] = $_GET['codt'];
+			$turma = $_SESSION['turmita'];
 
-		while ($r = mysqli_fetch_assoc($res)) {
-			echo "<table>";
-			echo "<tr><td>Aluno</td><td>Lista de chamada</td></tr>";
+			$sql = "SELECT aluno.nome as NomeAluno, aluno.cod as CodAluno from aluno inner join matricula on matricula.turma_cod = $turma AND matricula.aluno_cod = aluno.cod ";
+
+			$res = mysqli_query($conexao, $sql);
+
+			//echo "<br><tr><td><label name ='turma'>".$turma."</label></td></tr><br>";
+			//echo "<tr><td><label name ='aula'>".$aula."</label></td></tr><br>";
 			echo "<tr>";
-			echo "<td>".$r['NomeAluno']."</td>";
-			$teste = $r['CodAluno'];
-			echo "<td>";
-			echo "<form action='' method='POST'";
-			echo "<td>"."Presente <input type='radio' name='opcao' value='true'>"."<br>Faltou <input type='radio' name='opcao' value='false'> "."</td>";
-			echo "</form>";
-			echo "</td>";
-			echo "</tr>";
-			echo "</table>";
-			
-			if(isset($_POST['inserir'])){
-				$falta = filter_input(INPUT_POST, 'opcao');
-				//$contfalta = 0;
-
-				if($falta['opcao'] == 'true'){
-					$contfalta = $contfalta + 1;
-				}else{
-
-				}
-
-				echo $falta;
-
-				$frequencia = mysqli_query($conexao, "INSERT INTO frequencia(aluno_cod, aulas_cod, falta) VALUES('$teste','$', '$')");
-
-				if(!$frequencia){
-					header("location:criaraula.php?false");
-					echo "Erro ao realizar cadastro da aula. Tente outra vez.";
-					exit;
-				}else{
-					header("location:criaraula.php?true");
-				}
+			//echo "<tr><td>Aluno</td><td>Lista de chamada</td></tr>";
+			echo "<table>";
+			while ($r = mysqli_fetch_assoc($res)) {
+				echo "<tr>";
+				echo "<td>".$r['NomeAluno']."</td>";
+				echo "<td>"."Presente <input type='radio' name='".$r['CodAluno']."' value=1>"."<br>Faltou <input type='radio' 	name='".$r['CodAluno']."' value=0> "."</td>";
+				echo "</tr>";
 			}
-
-		}
-	?>
+			echo "</table>";
+		?>
+	</form>
 
 </body>
 </html>
