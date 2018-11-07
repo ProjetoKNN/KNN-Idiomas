@@ -30,8 +30,10 @@
 	        			echo "Nota".$i.": ".$dados['nota'.$i]."<br>";
 	        		}
 	        	}
+	        	echo "Média: ".$dados['media']."<br>";
 	        	echo "Faltas: ".$dados['falta']."<br>";
 	        	echo "Reposições: ".$dados['reposicao']."<br>";
+
 	        }
 	?>
 </body>
