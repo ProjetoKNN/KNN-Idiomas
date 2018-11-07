@@ -29,7 +29,7 @@
 			</form>
 				<?php 
 					if(isset($_POST['inserir'])){
-						$cod = filter_input(INPUT_POST, 'cod');
+						$cod = $_GET['cod'];
 						$media = 0;
 						$nota1 = filter_input(INPUT_POST, 'nota1');
 						$nota2 = filter_input(INPUT_POST, 'nota2');

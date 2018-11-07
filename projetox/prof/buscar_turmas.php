@@ -23,8 +23,9 @@
 			echo "<tr>";
 			echo "<td>".$r['NomeAluno']."</td><hr>";
 			echo "<td>";
-			echo "<form action='inserir_boletim.php' method='POST'>";
+			echo "<form action='inserir_boletim.php' method='GET'>";
 			echo "<input name='cod' type='hidden' value='".$r['CodAluno']."'>";
+			//$testee = $r['CodAluno'];
 			echo "<button>Inserir Notas</button>";
 			echo "</form>";
 			echo "</td>";
@@ -38,6 +39,9 @@
 			echo "</tr>";
 			echo "</table>";
 		}
+		
+
+		//$_SESSION['codii'] = $testee;
 	?>
 </body>
 </html>

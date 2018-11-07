@@ -1,4 +1,3 @@
-<PHP
 <!DOCTYPE html>
 <html>
 <head>
