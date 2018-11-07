@@ -39,7 +39,6 @@
 						$nota6 = filter_input(INPUT_POST, 'nota6');
 						$rep = filter_input(INPUT_POST, 'reposicao');
 						$contfalta = 0;
-						echo "AQUI PORRA ".$cod;
 
 						$sql = "SELECT falta FROM frequencia where aluno_cod = $cod";
 
@@ -50,10 +49,28 @@
 								if($dados['falta'] == 1){
 									$contfalta = $contfalta + 1;
 								}
-							}
-							echo "AQUI ".$contfalta;
+							}	
 
-						$notas = mysqli_query($conexao, "INSERT INTO boletim (falta, nota1, nota2, nota3, nota4, nota5, nota6, media, reposicao, aluno_cod) VALUES('$contfalta', '$nota1', '$nota2', '$nota3', '$nota4', '$nota5', '$nota6', '$media', '$rep', $cod)");
+						$notas = mysqli_query($conexao, "INSERT INTO boletim (falta, nota1, nota2, nota3, nota4, nota5, nota6, media, reposicao, aluno_cod) VALUES('$contfalta', '$nota1', '$nota2', '$nota3', '$nota4', '$nota5', '$nota6', '', '$rep', $cod)");
+
+						$sql2 = "SELECT * FROM boletim where aluno_cod = $cod";
+
+						$consulta2 = mysqli_query($conexao, $sql2);
+
+						while($dados = mysqli_fetch_assoc($consulta2))
+						{
+							if($media == 0)
+								{
+									for($i = 1; $i <= 6; $i++)
+									{
+										$media = $media + $dados['nota'.$i];
+									}
+									$media = $media/6;
+								}
+						}
+						echo "AKI ".$media;
+
+						$mediax = mysqli_query($conexao, "UPDATE boletim SET media= $media WHERE aluno_cod = $cod");
 					}
 				?>
 			</form>
