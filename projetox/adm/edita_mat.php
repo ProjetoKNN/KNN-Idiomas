@@ -27,7 +27,6 @@
 		</head>
 
 		<?php
-			//Faz a seleção da turma para utilizar no <select>.
 			$consTurma = mysqli_query($conexao,"SELECT * FROM turma");
 				if(!$consTurma){
 					echo "Erro ao realizar consulta. Tente outra vez.";

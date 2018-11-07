@@ -11,11 +11,11 @@
     //Executa a query
     $sql = "DELETE FROM curso WHERE cod=".$cod;
     $remove = mysqli_query($conexao, $sql);
-    //Se falhou, redireciona pra buscar_curso.php com remove igual a false 
+    //Se falhou, redireciona pra exibe.php com remove igual a false 
     if(!$remove){
-        header("Location:../buscar_curso.php?remocao=false");
+        header("Location:../buscar_curso.php?remove=false");
         exit;
     }
-    //se tudo deu certo, redireciona pra buscar_curso.php com remove igual a true
+    //se tudo deu certo, redireciona pra exibe.php com remove igual a true
     header("Location:../buscar_curso.php?remocao=true");
 ?>

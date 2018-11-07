@@ -16,12 +16,12 @@
     $update = mysqli_query($conexao, $sql);
 
 
-    //Se não deu certo, redireciona pra buscar_turm.php com alteracao igual a false
+    //Se não deu certo, redireciona pra buscar_turm com alteracao igual a false
     if(!$update){
         header("Location:../buscar_turm.php?alteracao=false");
         exit;
     }else{
-    //Se tudo deu certo, redireciona pra buscar_turm.php com alteracao igual a true
+    //se tudo deu certo, redireciona pra exibe.php com alteracao igual a true
         header("Location:../buscar_turm.php?alteracao=true");
     }
 ?>

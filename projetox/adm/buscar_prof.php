@@ -65,8 +65,8 @@
 				}
 		        //Carrega os dados
 				if(isset($_POST['buscar'])){
-					$pesquisa = $_POST['busca'];
-					$sql = "SELECT * FROM professor WHERE nome LIKE '%$pesquisa%'";
+					$teste = $_POST['busca'];
+					$sql = "SELECT * FROM professor WHERE nome LIKE '%$teste%'";
 					$consulta = mysqli_query($conexao, $sql);
 						if(!$consulta){
 							echo "Erro ao realizar consulta. Tente outra vez.";

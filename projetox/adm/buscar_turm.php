@@ -66,11 +66,9 @@
 	        //Carrega os dados
 			if(isset($_POST['buscar']))
 			{
-				$pesquisa = $_POST['busca'];
+				$teste = $_POST['busca'];
 
-				$sql = "SELECT curso.nome as NomeCurso, curso.cod as codigo, turma.nome as NomeTurma, turma.cod as cod, turma.qtd as qtd, professor.nome as NomeProf FROM turma inner join curso on curso.cod = turma.curso_cod join professor on professor.cod = turma.codProf where turma.nome LIKE '%$pesquisa%'";
-
-				$consulta = mysqli_query($conexao,$sql);
+				$consulta = mysqli_query($conexao,"SELECT curso.nome as NomeCurso, curso.cod as codigo, turma.nome as NomeTurma, turma.cod as cod, turma.qtd as qtd, professor.nome as NomeProf FROM turma inner join curso on curso.cod = turma.curso_cod join professor on professor.cod = turma.codProf where turma.nome LIKE '%$teste%'");
 
 				
 				while($dados = mysqli_fetch_assoc($consulta))
@@ -78,10 +76,11 @@
 					echo "<table>";
 					echo "<tr><td>Nome</td><td>Nome do Professor</td><td>Quantidade de alunos</td><td>Cursos</td><td>Editar</td><td>Apagar</td></tr>";
 					echo "<tr>";
+		            //echo "<td>".$dados['cod']. "</td>";
 					echo "<td>".$dados['NomeTurma']."</td>";
 					echo "<td>".$dados['NomeProf']. "</td>";
 					echo "<td>".$dados['qtd']."</td>";
-					echo "<td>".$dados['NomeCurso']."</td>";
+					echo "<td>".$dados['codigo']."</td>";
 		            // Cria um formulário para enviar os dados para a página de edição 
 		            // Colocamos os dados dentro input hidden
 					echo "<td>";
@@ -91,7 +90,6 @@
 					echo "<input name='codProf' type='hidden' value='" .$dados['NomeProf']. "'>";   
 					echo "<input name='qtd' type='hidden' value=".$dados['qtd'].">";
 					echo "<input name='curso_cod' type='hidden' value=".$dados['codigo'].">";
-					echo "<input name='NomeCurso' type='hidden' value=".$dados['NomeCurso'].">";
 					echo "<button>Editar</button>";
 					echo "</form>";
 					echo "</td>";

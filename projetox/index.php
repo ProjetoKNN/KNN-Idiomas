@@ -4,42 +4,31 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, inicial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/estiloindex.css">
+    <link rel="shortcut icon" href="../img/knnlogo.ico">
 </head>
-<style type="text/css">
-        body{
-            text-align: center;
-        }
-        table{
-        	border:1px solid;
-        	padding: 5px;
-        }
-        td{
-            border: 1px solid lightgray;
-            font-size: 1em;
-            padding: 5px
-        }
-        button{
-            padding: 5px
-        }
-    </style>
+
 <body>
 	<!-- required: Obriga o usuário a preencher algum campo.-->
-	<h1>Login:</h1>
+	<div class="container-fluid" id="a">
 
-	<form name="login_sys" action="verificar.php" method="post">
-		<label for="txtnome">Nome: </label>
-		<input type="text" name="login_nome" required="true" id="txtnome">
-		<br>
-		<br>
-		<label for="txtsenha">Senha: </label>
-		<input type="password" name="login_senha" required="true" id="txtsenha">
-		<br>
-		<br>
-		<input type="submit" value="Logar">
-		<input type="reset" value="Limpar">
-	</form>
+		<h1>LOGIN</h1>
+
+		<form name="login_sys" action="verificar.php" method="post">
+
+			<label for="txtnome">Nome: </label><br>
+			<input type="text" name="login_nome" required="true" id="txtnome"><br><br>
+			<label for="txtsenha">Senha: </label><br>
+			<input type="password" name="login_senha" required="true" id="txtsenha"><br><br>
+			<input type="submit" value="LOGAR" class="btn btn-info" id="botao">
+			<input type="reset" value="LIMPAR" class="btn btn-info" id="botao">
+
+		</form>
+
+	</div>
 	<?php
-		//Mostra o aviso na tela do usuário de acordo com o status que for recebido da páginas relacionadas ao sistema de Login.
 			if(isset($_GET['status']))
 			{
 				if(intval($_GET['status']) == 0){
@@ -54,5 +43,8 @@
 				}
 			}	
 		?>
+	<script src="jquery/dist/jquery.js"></script>
+    <script src="popper.js/dist/popper.js"></script>
+    <script src="js/bootstrap.js"></script>	
 </body>
 </html>

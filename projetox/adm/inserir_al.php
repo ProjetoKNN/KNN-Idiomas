@@ -1,6 +1,5 @@
 	<?php
 	include("../conexao.php");
-	mysqli_set_charset($conexao, "utf-8");
 	date_default_timezone_set('America/Sao_Paulo');
 	?>
 <!DOCTYPE html>
@@ -9,24 +8,9 @@
 		<title>Inserção de Alunos</title>
 		<meta charset="UTf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/estiloinal.css">	
 	</head>
-	<style type="text/css">
-		body{
-			text-align: justify;
-		}
-		table{
-			border:1px solid;
-			padding: 5px;
-		}
-		td{
-			border: 1px solid lightgray;
-			font-size: 1em;
-			padding: 5px
-		}
-		button{
-			padding: 5px
-		}
-	</style>
 	<script>
 		function formatar(mascara, documento){
 			var i = documento.value.length;
@@ -40,56 +24,60 @@
 		}
 	</script>
 	<body>
-			<a href="adm_func.php"><button>Voltar</button></a>
-			<h1>Inserindo um aluno:</h1>
-		<form name="aluno" action="" id="nha" method="POST">
+		<div class="container-fluid" id="nha">
+			<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
+		</div>
+		<div class="container" id="a">
+			<h1>Inserindo um aluno:</h1><BR>
+		<form name="aluno" action="" method="POST">
 			Nome:
-			<input type="text" name="nome" placeholder="Insira o nome completo" required>
+			<input type="text" name="nome" placeholder="Insira o nome completo" required id="nome">
 			Data de nascimento:
 			<input type="date" name="data" required>
 			CPF:
-			<input type="text" name="cpf" placeholder="Insira um CPF válido" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required><br>
+			<input type="text" id="cpf" name="cpf" placeholder="Insira um CPF válido" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required>
 			RG:
-			<input type="text" name="rg" placeholder="Insira um RG válido" maxlength="10" OnKeyPress="formatar('##.###.###', this)" required>
+			<input type="text" name="rg" placeholder="Insira um RG válido" id="rg" maxlength="10" OnKeyPress="formatar('##.###.###', this)" required><br><br>
 			Telefone:
-			<input type="text" name="tel" maxlength="13" placeholder="xx-xxxxx-xxxx" OnKeyPress="formatar('##-#####-####', this)" required><br>
+			<input type="text" name="tel" maxlength="13" placeholder="xx-xxxxx-xxxx" id="tel" OnKeyPress="formatar('##-#####-####', this)" required>
 			Nome do responável:
-			<input type="text"  name="nomeResp" placeholder="Insira o nome do responável caso aluno seja menor de idade">
+			<input type="text"  name="nomeResp" id="resp" placeholder="Insira o nome do responável">
 			Telefone do responsável:
-			<input type="text" name="telResp" maxlength="13" placeholder="xx-xxxxx-xxxx" OnKeyPress="formatar('##-#####-####', this)"><br>
+			<input type="text" name="telResp" maxlength="13" id="tel" placeholder="xx-xxxxx-xxxx" OnKeyPress="formatar('##-#####-####', this)"><br><br>
 			Rua:
-			<input type="text" name="rua" placeholder="Informe a rua" required>
+			<input type="text" name="rua" placeholder="Informe a rua" id="rua" required>
 			Numero:	
-			<input type="text" name="nmr">
+			<input type="text" placeholder="xxxx" name="nmr" id="nmr">
 			Bairro:	
-			<input type="text" name="bairro" placeholder="Insira o bairro" required> <br>
+			<input type="text" name="bairro" placeholder="Insira o bairro" id="bairro" required>
 			Cidade:
-			<input type="text" name="cidade" placeholder="Informe a cidade" required>
+			<input type="text" name="cidade" placeholder="Informe a cidade" id="city" required>
 			UF:
-			<input type="text" name="estado" maxlength="2" placeholder="Informe o estado" required>
+			<input type="text" name="estado" maxlength="2" id="uf" required><BR><br>
 			CEP:
-			<input type="text" name="cep" maxlength="9" placeholder="Informe o CEP" OnKeyPress="formatar('#####-###', this)" required>
+			<input type="text" name="cep" maxlength="9" placeholder="Informe o CEP" id="cep" OnKeyPress="formatar('#####-###', this)" required>
 			E-mail:
-			<input type="text" name="email" placeholder="Informe o e-mail"><br>
+			<input type="text" name="email" placeholder="Informe o e-mail" id="email">
 			Alergia alimentar:
-			<input type="text" name="alergiaalimentar" placeholder="Informe as doenças">
+			<input type="text" name="alergiaalimentar" placeholder="Informe as doenças" id="aliment"><br><br>
 			Remédio:
-			<input type="text" name="remedio" placeholder="Informe os remédios"><br>
+			<input type="text" name="remedio" placeholder="Informe os remédios" id="remedio">
 			Alergia:
-			<input type="text" name="alergia" placeholder="Informe as alergias">
+			<input type="text" name="alergia" placeholder="Informe as alergias" id="alergia">
 			<hr>
 			<h4>Informações do Login:</h4>
 			Nome de usuário:
 			<input type="text" name="login" placeholder="Insira o nome de usuário desejado"><br>
 			Senha:
 			<input type="password" name="senha" maxlength="16" placeholder="Insira a senha desejado"><br><br>
-			<input type="submit" name="inserir" value="INSERIR">
-			<input type="reset" name="limpar" value="LIMPAR">
+			<input type="submit" name="inserir" class="btn btn-info" value="INSERIR">
+			<input type="reset" name="limpar" class="btn btn-info" value="LIMPAR">
 		</form>
+	</div>
 	</body>
 </html>
 <?php
-	//Pega os "name" do formulário acima e coloca nas variáveis através do método POST.
+	//inserindo os dados de alunos.
 	if(isset($_POST['inserir'])){
 		$nome = $_POST['nome'];
 		$datanasc = $_POST['data'];
@@ -112,10 +100,7 @@
 		$alergia = $_POST['alergia'];
 		$cidade = $_POST['cidade'];
 
-		//Faz a inserção dos dados digitados pelo usuário no formulário acima na tabela "aluno" contida no BD.
 		$aluno = mysqli_query($conexao,"INSERT INTO aluno(nome, cpf, rg, datanascimento, telefonealuno, nomeresponsavel, telefoneresponsavel, rua, numero, bairro, cidade, estado, cep, email, alergiaalimentar, remedio, alergia) VALUES ('$nome','$cpf', '$rg', '$datanasc', '$contato', '$nomeresp', '$contatoresp', '$rua', '$nmr', '$bairro', '$cidade', '$uf', '$cep', '$email','$alergiaalimentar','$remedio','$alergia')");
-
-		//Cria um login para o aluno inserido acima.
 		$login = mysqli_query($conexao,"INSERT INTO login(usuario, senha, privilegio, al) VALUES ('$login', '$senha', '$priv', '$cpf')");
 		if(!$aluno){
 			header("location:inserir_al.php?false");

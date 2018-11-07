@@ -14,6 +14,8 @@
     $novoEstado = filter_input(INPUT_POST, 'estado');
 
     //Estabelece a conexão com o mysql
+
+   
     if(!$conexao){
         header("Location:../buscar_prof.php?alteracao=false");
         exit;
@@ -22,12 +24,12 @@
     $sql = "UPDATE professor SET nome='".$novoNome. "', cpf='" . $novoCpf . "', rg='".$novoRg."', email='".$novoEmail."',telefone='".$novoTel. "',rua='".$novaRua."',numero='".$novoNmr."', bairro='".$novoBairro."', cidade='".$novaCidade."', estado='".$novoEstado."' WHERE cod='".$cod."'";
     $update = mysqli_query($conexao, $sql);
 
-    //Se não deu certo, redireciona pra buscar_prof.php com alteracao igual a false
+    //Se não deu certo, redireciona pra exibe.php com alteracao igual a false
     if(!$update){
         header("Location:../buscar_prof.php?alteracao=false");
         exit;
     }
 
-    //se tudo deu certo, redireciona pra buscar_prof.php com alteracao igual a true
+    //se tudo deu certo, redireciona pra exibe.php com alteracao igual a true
     header("Location:../buscar_prof.php?alteracao=true");
 ?>

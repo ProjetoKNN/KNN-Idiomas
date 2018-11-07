@@ -24,7 +24,7 @@
 			echo "<td>".$r['NomeAluno']."</td><hr>";
 			echo "<td>";
 			echo "<form action='inserir_boletim.php' method='POST'>";
-			echo "<input name='codAluno' type='hidden' value='".$r['CodAluno']."'>";
+			echo "<input name='cod' type='hidden' value='".$r['CodAluno']."'>";
 			echo "<button>Inserir Notas</button>";
 			echo "</form>";
 			echo "</td>";

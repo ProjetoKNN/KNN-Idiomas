@@ -2,56 +2,52 @@
 <html>
 <head>
 	<title>Painel do Admnistrador</title>
-	<meta charset="UTf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/estiloadm.css">	
 </head>
-<style type="text/css">
-        body{
-            text-align: center;
-        }
-        table{							
-        	border:1px solid;			
-        	padding: 5px;
-        }
-        td{
-            border: 1px solid lightgray;
-            font-size: 1em;
-            padding: 5px
-        }
-        button{
-            padding: 5px
-        }
-    </style>
 <body>
-	<form action="../login_logout.php">
-		<input type="submit" name="sair" value="Sair">
-	</form>
-	<h1>Bem-Vindo Administrador:</h1>
-	<h3>Gerenciamento de Alunos:</h3>
-	<div>
-		<a href="inserir_al.php"><button>Inserir Aluno</button></a>
-		<a href="buscar_al.php"><button>Buscar Alunos</button></a>
+	<div class="container-fluid" id="nha">
+			<form action="../login_logout.php">
+				<input type="submit" name="sair" value="Sair" class="btn btn-info">
+			</form>
 	</div>
-	<div>
-		<h3>Gerenciamento de Professores:</h3>
-		<a href="inserir_prof.php"><button>Inserir Professor</button></a>
-		<a href="buscar_prof.php"><button>Buscar Professores</button></a>
-	</div><br>
-	<div>
-		<h3>Gerenciamento de Turma/Cursos:</h3>
-		<a href="inserir_turm.php"><button>Inserir Turmas & Cursos</button></a>
-		<a href="buscar_turm.php"><button>Buscar Turma</button></a>
-		<a href="buscar_curso.php"><button>Buscar Curso</button></a>
+	<div class="container" id="a">
+		
+		<h1 id="b">Bem-Vindo Administrador:</h1><hr>
+		<div>
+			<h3>Gerenciamento de Alunos:</h3>
+			<div>
+				<a href="inserir_al.php"><button type="button" class="btn btn-info"><b>Inserir Aluno</button></a>
+				<a href="buscar_al.php"><button type="button" class="btn btn-info"><b>Buscar Alunos</button></a>
+				<hr>
+			</div>
+			<h3>Gerenciamento de Professores:</h3>
+			<div>
+				<a href="inserir_prof.php"><button type="button" class="btn btn-info"><b>Inserir Professor</button></a>
+				<a href="buscar_prof.php"><button type="button" class="btn btn-info"><b>Buscar Professores</button></a>
+				<hr>
+			</div>
+			<h3>Gerenciamento de Turma/Cursos:</h3>
+			<div>
+				<a href="inserir_turm.php"><button type="button" class="btn btn-info"><b>Inserir Turmas & Cursos</button></a>
+				<a href="buscar_turm.php"><button type="button" class="btn btn-info"><b>Buscar Turma</button></a>
+				<a href="buscar_curso.php"><button type="button" class="btn btn-info"><b>Buscar Curso</button></a>
+				<hr>
+			</div>
+			<h3>Gerenciamento de Matrículas:</h3>
+			<div>
+				<a href="inserir_mat.php"><button  type="button" class="btn btn-info"><b>Inserir Matrícula</button></a>
+				<a href="buscar_mat.php"><button type="button" class="btn btn-info"><b>Buscar Matrículas</button></a>
+			</div>
+
+		</div>
 
 	</div>
-	<div>
-		<h3>Gerenciamento de Matrículas:</h3>
-		<a href="inserir_mat.php"><button>Inserir Matrícula</button></a>
-		<a href="buscar_mat.php"><button>Buscar Matrículas</button></a>
-	</div>
-	<div>
-		<h3>Gerenciamento de Pagamentos</h3>
-		<a href="pagamentos.php"><button>Pagamentos</button></a>
-	</div>
+
+	<script src="jquery/dist/jquery.js"></script>
+    <script src="popper.js/dist/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
