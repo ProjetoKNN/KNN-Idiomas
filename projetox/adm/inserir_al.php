@@ -57,7 +57,7 @@
 			CEP:
 			<input type="text" name="cep" maxlength="9" placeholder="Informe o CEP" id="cep" OnKeyPress="formatar('#####-###', this)" required>
 			E-mail:
-			<input type="text" name="email" placeholder="Informe o e-mail" id="email">
+			<input type="text" name="email" placeholder="Informe o e-mail"  >
 			Alergia alimentar:
 			<input type="text" name="alergiaalimentar" placeholder="Informe as doenças" id="aliment"><br><br>
 			Remédio:
