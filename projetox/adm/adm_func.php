@@ -13,7 +13,7 @@
 				<input type="submit" name="sair" value="Sair" class="btn btn-info">
 			</form>
 	</div>
-	<div class="container" id="a">
+	<div class="container-fluid" id="a" >
 		
 		<h1 id="b">Bem-Vindo Administrador:</h1><hr>
 		<div>
@@ -41,11 +41,8 @@
 				<a href="inserir_mat.php"><button  type="button" class="btn btn-info"><b>Inserir Matrícula</button></a>
 				<a href="buscar_mat.php"><button type="button" class="btn btn-info"><b>Buscar Matrículas</button></a>
 			</div>
-
 		</div>
-
 	</div>
-
 	<script src="jquery/dist/jquery.js"></script>
     <script src="popper.js/dist/popper.js"></script>
     <script src="js/bootstrap.js"></script>

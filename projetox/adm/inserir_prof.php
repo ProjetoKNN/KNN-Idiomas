@@ -5,7 +5,7 @@
 		<meta charset="UTf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="../css/estiloinal.css">	
+		<link rel="stylesheet" type="text/css" href="../css/estiloinprf.css">	
 	</head>
 	<script>
 		function formatar(mascara, documento){
@@ -19,30 +19,28 @@
 		}
 	</script>
 	<body>
-		<div class="container-fluid" id="nha">
-			<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
-		</div>
+		
 		<div class="container" id="a">
 			<h1>Inserindo um Professor:</h1>
 			<form name="aluno" action="" method="POST">
 				Nome:
 				<input type="text" name="nome" placeholder="Insira o nome completo" required="true" id="nome">
 				CPF:
-				<input type="text" name="cpf" placeholder="Insira um CPF válido" maxlength="14" required="true" OnKeyPress="formatar('###.###.###-##', this)" id="cpf"><br>
+				<input type="text" name="cpf" placeholder="Insira um CPF válido" maxlength="14" required="true" OnKeyPress="formatar('###.###.###-##', this)" id="cpf">
 				RG:
-				<input type="text" name="rg" placeholder="Insira um RG válido" maxlength="10" required="true" OnKeyPress="formatar('##.###.###', this)" id="rg">
+				<input type="text" name="rg" placeholder="Insira um RG válido" maxlength="10" required="true" OnKeyPress="formatar('##.###.###', this)" id="rg"> 
 				Telefone:
 				<input type="text" name="tel" maxlength="13" placeholder="xx-xxxxx-xxxx" required="true" OnKeyPress="formatar('##-#####-####', this)" id="tel"><br>
 				Rua:
 				<input type="text" name="rua" placeholder="Insira a rua" required="true" id="rua">
 				Número:
-				<input type="text" name="num" placeholder="Insira o número" id="nmr"><br>
+				<input type="text" name="num" placeholder="  xxxx" id="nmr">
 				Bairro:
 				<input type="text" name="bairro" placeholder="Insira o bairro" required="true" id="bairro">
 				Cidade:
 				<input type="text" name="city" placeholder="Insira a cidade" required="true" id="city">
 				UF:
-				<input type="text" name="uf" maxlength="2" placeholder="Insira o estado" required="true" id="uf">
+				<input type="text" name="uf" maxlength="2" placeholder="UF" required="true" id="uf"> <br>
 				E-mail:
 				<input type="text" name="email" placeholder="Insira o e-mail" id="email">
 				<hr>
@@ -51,9 +49,12 @@
 				<input type="text" name="login" placeholder="Insira o nome de usuário desejado"><br>
 				Senha:
 				<input type="password" name="senha" maxlength="16" placeholder="Insira a senha desejado"><br><br>
-				<input type="submit" name="inserir" value="INSERIR">
-				<input type="reset" name="limpar" value="LIMPAR">
+				<input type="submit" name="inserir" class="btn btn-info" value="INSERIR">
+				<input type="reset" name="limpar" class="btn btn-info" value="LIMPAR">
 			</form>
+			<div class="container-fluid" id="nha">
+				<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
+			</div>
 		</div>
 	</body>
 </html>

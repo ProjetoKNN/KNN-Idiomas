@@ -7,7 +7,6 @@ html
 body{
 	text-align: justify;
 	background-image: url("../img/knnbg.jpg");
-	/*background-repeat: no-repeat;	*/
 	background-attachment: fixed;
 	background-size: cover;
 	color: white;
@@ -38,7 +37,7 @@ label
 	opacity: 0.9;
 }
 #a{
-	margin-top: 15%;
+	margin-top: 10%;
 	background-color: rgba(0,0,0,0.5);
 	width: 450px;
 	padding: 35px;

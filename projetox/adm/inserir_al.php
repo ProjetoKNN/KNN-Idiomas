@@ -24,9 +24,7 @@
 		}
 	</script>
 	<body>
-		<div class="container-fluid" id="nha">
-			<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
-		</div>
+		
 		<div class="container" id="a">
 			<h1>Inserindo um aluno:</h1><BR>
 		<form name="aluno" action="" method="POST">
@@ -47,7 +45,7 @@
 			Rua:
 			<input type="text" name="rua" placeholder="Informe a rua" id="rua" required>
 			Numero:	
-			<input type="text" placeholder="xxxx" name="nmr" id="nmr">
+			<input type="text" placeholder="  xxxx" name="nmr" id="nmr">
 			Bairro:	
 			<input type="text" name="bairro" placeholder="Insira o bairro" id="bairro" required>
 			Cidade:
@@ -67,12 +65,15 @@
 			<hr>
 			<h4>Informações do Login:</h4>
 			Nome de usuário:
-			<input type="text" name="login" placeholder="Insira o nome de usuário desejado"><br>
+			<input type="text" name="login" placeholder="Insira o nome de usuário"><br>
 			Senha:
-			<input type="password" name="senha" maxlength="16" placeholder="Insira a senha desejado"><br><br>
+			<input type="password" name="senha" maxlength="16" placeholder="Insira a senha"><br><br>
 			<input type="submit" name="inserir" class="btn btn-info" value="INSERIR">
 			<input type="reset" name="limpar" class="btn btn-info" value="LIMPAR">
 		</form>
+		<div class="container-fluid" id="nha">
+			<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
+		</div>
 	</div>
 	</body>
 </html>
