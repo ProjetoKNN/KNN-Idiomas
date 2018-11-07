@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Nov-2018 às 02:15
+-- Generation Time: 06-Nov-2018 às 16:42
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -75,7 +75,35 @@ CREATE TABLE `aulas` (
 --
 
 INSERT INTO `aulas` (`cod`, `conteudo`, `dataaula`, `turma_cod`) VALUES
-(2, 'NHA', '0045-05-14', 11);
+(1, 'teste', '2018-11-06', 11),
+(2, 'xd', '2018-10-31', 11),
+(3, 'xd', '2018-10-31', 11),
+(4, 'xd', '2018-10-31', 11),
+(5, 'xd', '2018-10-31', 11),
+(6, 'xd', '2018-10-31', 11),
+(7, 'xd', '2018-10-31', 11),
+(8, 'xd', '2018-10-31', 11),
+(9, 'xd', '2018-10-31', 11),
+(10, 'xd', '2018-10-31', 11),
+(11, 'xd', '2018-10-31', 11),
+(12, 'xd', '2018-10-31', 11),
+(13, 'xd', '2018-10-31', 11),
+(14, 'xd', '2018-10-31', 11),
+(15, 'xd', '2018-10-31', 11),
+(16, 'xd', '2018-10-31', 11),
+(17, 'xd', '2018-10-31', 11),
+(18, 'xd', '2018-10-31', 11),
+(19, 'xd', '2018-10-31', 11),
+(20, 'xd', '2018-10-31', 11),
+(21, 'xd', '2018-10-31', 11),
+(22, 'dasdsa', '2018-10-30', 11),
+(23, 'dasdsa', '2018-10-30', 11),
+(24, 'testeee', '2018-11-06', 11),
+(25, 'aula54', '2018-11-06', 11),
+(26, 'aula20', '2018-11-06', 11),
+(27, 'aulinhadocaralho', '2018-11-06', 11),
+(28, 'XD', '2018-11-06', 11),
+(29, 'adsdas', '2018-10-30', 11);
 
 -- --------------------------------------------------------
 
@@ -135,6 +163,18 @@ CREATE TABLE `frequencia` (
   `aulas_cod` int(11) NOT NULL,
   `falta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `frequencia`
+--
+
+INSERT INTO `frequencia` (`aluno_cod`, `aulas_cod`, `falta`) VALUES
+(10, 26, 1),
+(13, 26, 0),
+(10, 27, 1),
+(13, 27, 0),
+(10, 28, 1),
+(13, 28, 1);
 
 -- --------------------------------------------------------
 
@@ -381,12 +421,6 @@ ALTER TABLE `aluno`
   MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `aulas`
---
-ALTER TABLE `aulas`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
@@ -437,7 +471,7 @@ ALTER TABLE `boletim`
 --
 ALTER TABLE `frequencia`
   ADD CONSTRAINT `fk_frequencia_aluno1` FOREIGN KEY (`aluno_cod`) REFERENCES `aluno` (`cod`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `frequencia_ibfk_1` FOREIGN KEY (`aulas_cod`) REFERENCES `aulas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `frequencia_ibfk_1` FOREIGN KEY (`aulas_cod`) REFERENCES `aulas` (`cod`) ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `login`
