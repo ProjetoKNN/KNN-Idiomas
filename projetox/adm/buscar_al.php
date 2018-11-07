@@ -7,6 +7,25 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"> 
         <!--<link rel="stylesheet" type="text/css" href="../css/estilobuscal.css"> -->
     </head>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+        }
+        table{
+            border:1px solid;
+            padding: 5px;
+        }
+        td{
+            border: 1px solid lightgray;
+            font-size: 1em;
+            padding: 5px
+        }
+        button{
+            padding: 5px
+        }
+    </style>
             <body>
                 <?php 
                     //Área de notificações

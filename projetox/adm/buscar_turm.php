@@ -80,7 +80,7 @@
 					echo "<td>".$dados['NomeTurma']."</td>";
 					echo "<td>".$dados['NomeProf']. "</td>";
 					echo "<td>".$dados['qtd']."</td>";
-					echo "<td>".$dados['codigo']."</td>";
+					echo "<td>".$dados['NomeCurso']."</td>";
 		            // Cria um formulário para enviar os dados para a página de edição 
 		            // Colocamos os dados dentro input hidden
 					echo "<td>";
@@ -89,7 +89,7 @@
 					echo "<input name='nome' type='hidden' value='" .$dados['NomeTurma']. "'>";
 					echo "<input name='codProf' type='hidden' value='" .$dados['NomeProf']. "'>";   
 					echo "<input name='qtd' type='hidden' value=".$dados['qtd'].">";
-					echo "<input name='curso_cod' type='hidden' value=".$dados['codigo'].">";
+					echo "<input name='curso_cod' type='hidden' value=".$dados['NomeCurso'].">";
 					echo "<button>Editar</button>";
 					echo "</form>";
 					echo "</td>";

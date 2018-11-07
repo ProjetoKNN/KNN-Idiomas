@@ -76,7 +76,7 @@
                                 echo "<tr><td>Aluno</td><td>Turma</td><td>Curso</td><td>Data da Matrícula</td><td>Data do Pagamento</td><td>Editar</td><td>Apagar</td></tr>";
                                 echo "<tr>";
                                 //echo "<td>".$dados['cod']. "</td>";
-                                echo "<td><a href='edita_al.php'>".$dados['NomeAluno']."</a></td>";
+                                echo "<td>".$dados['NomeAluno']."</td>";
                                 echo "<td>".$dados['NomeTurma']. "</td>";
                                 echo "<td>".$dados['NomeCurso']."</td>";
                                 echo "<td>".$dados['datamatricula']."</td>";
