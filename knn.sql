@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Nov-2018 às 16:42
+-- Generation Time: 07-Nov-2018 às 10:50
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -54,8 +54,7 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`cod`, `nome`, `cpf`, `rg`, `datanascimento`, `telefonealuno`, `nomeresponsavel`, `telefoneresponsavel`, `rua`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `email`, `alergiaalimentar`, `remedio`, `alergia`) VALUES
-(10, 'Wellington Augusto Morais Santos', '122.800.826-40', '21.329.959', '1999-01-19', '35-98403-6830', 'MÃ£e', '35-94002-8922', 'Rua 2', 221, 'Residencial ParaÃ­so', 'Parais?polis', 'MG', '37660-000', 'wellingtonmoraisrx@gmail.com', '', 'Celestrat', 'Idiota'),
-(13, 'Elias', '55555', '2222222222', '2018-10-02', '2222222222', NULL, NULL, 'XD', 21, 'XD', 'XD', 'RX', 'RX', 'eliasotario@souotariomemo.com', NULL, NULL, NULL);
+(15, 'Aluno1', '122.800.826-40', '21.329.959', '1999-01-19', '35-98403-6830', 'Mae', '35-94002-8922', 'Rua 1', 21, 'Bairro', 'Cidade', 'UF', '37660-000', 'aluno1@gmail.com', 'Pao', 'Gardenal', 'Idiotas');
 
 -- --------------------------------------------------------
 
@@ -75,35 +74,7 @@ CREATE TABLE `aulas` (
 --
 
 INSERT INTO `aulas` (`cod`, `conteudo`, `dataaula`, `turma_cod`) VALUES
-(1, 'teste', '2018-11-06', 11),
-(2, 'xd', '2018-10-31', 11),
-(3, 'xd', '2018-10-31', 11),
-(4, 'xd', '2018-10-31', 11),
-(5, 'xd', '2018-10-31', 11),
-(6, 'xd', '2018-10-31', 11),
-(7, 'xd', '2018-10-31', 11),
-(8, 'xd', '2018-10-31', 11),
-(9, 'xd', '2018-10-31', 11),
-(10, 'xd', '2018-10-31', 11),
-(11, 'xd', '2018-10-31', 11),
-(12, 'xd', '2018-10-31', 11),
-(13, 'xd', '2018-10-31', 11),
-(14, 'xd', '2018-10-31', 11),
-(15, 'xd', '2018-10-31', 11),
-(16, 'xd', '2018-10-31', 11),
-(17, 'xd', '2018-10-31', 11),
-(18, 'xd', '2018-10-31', 11),
-(19, 'xd', '2018-10-31', 11),
-(20, 'xd', '2018-10-31', 11),
-(21, 'xd', '2018-10-31', 11),
-(22, 'dasdsa', '2018-10-30', 11),
-(23, 'dasdsa', '2018-10-30', 11),
-(24, 'testeee', '2018-11-06', 11),
-(25, 'aula54', '2018-11-06', 11),
-(26, 'aula20', '2018-11-06', 11),
-(27, 'aulinhadocaralho', '2018-11-06', 11),
-(28, 'XD', '2018-11-06', 11),
-(29, 'adsdas', '2018-10-30', 11);
+(1, 'aula1', '2018-11-07', 22);
 
 -- --------------------------------------------------------
 
@@ -130,8 +101,7 @@ CREATE TABLE `boletim` (
 --
 
 INSERT INTO `boletim` (`cod`, `falta`, `nota1`, `nota2`, `nota3`, `nota4`, `nota5`, `nota6`, `media`, `reposicao`, `aluno_cod`) VALUES
-(1, 2, 5, 5, 5, 5, 5, 5, 5, 1, 10),
-(0, 3, 7, 7, 5, NULL, NULL, NULL, NULL, 3, 13);
+(1, 2, 5, 6, 8, 10, 10, 6, 7.5, 1, 15);
 
 -- --------------------------------------------------------
 
@@ -150,7 +120,7 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`nome`, `duracao`, `cod`) VALUES
-('InglÃªs', 18, 12);
+('Ingles', 0, 14);
 
 -- --------------------------------------------------------
 
@@ -169,12 +139,7 @@ CREATE TABLE `frequencia` (
 --
 
 INSERT INTO `frequencia` (`aluno_cod`, `aulas_cod`, `falta`) VALUES
-(10, 26, 1),
-(13, 26, 0),
-(10, 27, 1),
-(13, 27, 0),
-(10, 28, 1),
-(13, 28, 1);
+(15, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -211,10 +176,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`usuario`, `senha`, `privilegio`, `al`, `pr`) VALUES
 ('adm', 'adm', 'adm', NULL, NULL),
-('elias', 'elias', 'usr', '55555', NULL),
-('napaula', 'napaula', 'prf', NULL, '149.379.026-96'),
-('well', 'well', 'usr', '122.800.826-40', NULL),
-('xdxd', 'xdxd', 'prf', NULL, '124124124');
+('aluno', 'aluno', 'usr', '122.800.826-40', NULL),
+('professor', 'professor', 'prf', NULL, '565.465.465-46');
 
 -- --------------------------------------------------------
 
@@ -236,8 +199,7 @@ CREATE TABLE `matricula` (
 --
 
 INSERT INTO `matricula` (`datamatricula`, `aluno_cod`, `turma_cod`, `curso`, `datapagamento`, `status`) VALUES
-('2018-10-16', 10, 11, 'InglÃªs', '2018-11-30', NULL),
-('2018-10-25', 13, 11, 'InglÃªs', '2018-10-30', NULL);
+('2018-11-07', 15, 22, 'Ingles', '2018-12-30', NULL);
 
 -- --------------------------------------------------------
 
@@ -276,8 +238,7 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`cod`, `nome`, `cpf`, `rg`, `rua`, `email`, `telefone`, `numero`, `bairro`, `cidade`, `estado`) VALUES
-(4, 'Ana Paula da Silva', '149.379.026-96', '21.327.024', 'SÃ­tio Santo AntÃ´nio S/N', 'napaulabiruta@nha.com', '35 9 8408-362', 24, 'Santo AntÃ´nio', 'ParaisÃ³polis', 'MG'),
-(5, 'aaaaaaa', '124124124', '12142124', '1214214', '12412414', '1241241241', 21, 'dd', 'dadasd', 'dd');
+(8, 'Professor', '565.465.465-46', '12.312.313', 'Rua 10', 'professor@gmail.com', '35-98425-4596', 20, 'Bairro', 'Cidade', 'UF');
 
 -- --------------------------------------------------------
 
@@ -310,14 +271,7 @@ CREATE TABLE `turma` (
 --
 
 INSERT INTO `turma` (`cod`, `nome`, `codProf`, `qtd`, `curso_cod`) VALUES
-(11, 'Kinder 5B', 4, 5, 12),
-(12, 'Turma1', 4, 10, 12),
-(13, 'Turma2', 4, 10, 12),
-(14, 'Turma3', 4, 10, 12),
-(15, 'caraca', 4, 50, 12),
-(16, 'claracol', 4, 40, 12),
-(17, 'kkk', 4, 50, 12),
-(18, 'hsadghjsagdjhdg', 5, 10, 12);
+(22, 'Turma1', 8, 10, 14);
 
 --
 -- Indexes for dumped tables
@@ -418,13 +372,13 @@ ALTER TABLE `turma`
 -- AUTO_INCREMENT for table `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `interessados`
@@ -442,13 +396,13 @@ ALTER TABLE `pagamentos`
 -- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
