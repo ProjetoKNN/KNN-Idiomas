@@ -4,8 +4,6 @@
 		<title>Inserção de Professores</title>
 		<meta charset="UTf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="../css/estiloinprf.css">	
 	</head>
 	<script>
 		function formatar(mascara, documento){

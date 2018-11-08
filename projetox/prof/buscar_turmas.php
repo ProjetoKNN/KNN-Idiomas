@@ -38,9 +38,6 @@
 			echo "</tr>";
 			echo "</table>";
 		}
-		
-
-		//$_SESSION['codii'] = $testee;
 	?>
 </body>
 </html>

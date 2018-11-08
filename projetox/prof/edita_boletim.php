@@ -7,7 +7,7 @@
 			<meta charset="utf-8">
 		</head>
 		<body>
-			<a href="buscar_turmas.php"><button>Voltar</button></a>
+			<a href="buscar_turmas.php"><button>Voltar</button></a><br>
 				<?php 
 					$CodAluno = filter_input(INPUT_POST, 'cod');
 
@@ -16,7 +16,15 @@
 					$res = mysqli_query($conexao, $sql);
 
 					while ($dados = mysqli_fetch_assoc($res)){
-						echo "Nota 1 ".$dados['nota1'];
+						for($i = 1; $i <= 6; $i++)
+						{
+	        				//Utiliza de um if para checar se essa nota existe no BD, caso não exista, não irá mostrar nada, apenas as existentes.
+	        				if($dados['nota'.$i] != "")
+	        				{
+	        					echo "Nota".$i.": ".$dados['nota'.$i]."<br>";
+	        				}
+	        			}
+						
 					}
 				?>
 			</form>
