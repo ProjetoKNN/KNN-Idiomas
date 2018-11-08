@@ -49,7 +49,8 @@
                 ?>
                     
 				<div class="container-fluid" id="a">
-				<a href="adm_func.php" id="c"><button class="btn btn-info">Voltar</button></a>
+				<a href="adm_func.php" id="c"><button class="btn btn-info">Voltar</button></a><br>
+                <a href="inserir_al.php"><button type="button"><b>Inserir um novo Aluno</button></a><br>
 					<h1>Buscando um Aluno:</h1>
                         <form name="aluno" method="POST">
                             Buscar:

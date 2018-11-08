@@ -51,7 +51,7 @@
 				<input type="reset" name="limpar" class="btn btn-info" value="LIMPAR">
 			</form>
 			<div class="container-fluid" id="nha">
-				<a href="adm_func.php"><button class="btn btn-info">Voltar</button></a>
+				<a href="buscar_prof.php"><button class="btn btn-info">Voltar</button></a>
 			</div>
 		</div>
 	</body>

@@ -1,0 +1,37 @@
+body
+{
+	height: 100%;
+}
+#divprincipal
+{
+	background-color: black;
+	text-align: center;
+	height: 589px;
+}
+#sair
+{
+	float: right;
+	margin-top: -48px;
+	margin-right: 10px;
+}
+button
+{
+	background: #fd5c63;
+	border-radius: 8px;
+	border: 2px solid #fd5c63;
+	color: #fff;
+	padding: 0.5em 0;
+}
+button:hover
+{
+	opacity: 0.6;
+    border: 2px solid #fd5c63;
+    color: #fff;
+    cursor: pointer;
+}
+nav
+{
+	text-align: center;
+	background-color: lightgrey;
+	margin-bottom: -8px;
+}
