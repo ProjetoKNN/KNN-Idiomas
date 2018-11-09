@@ -50,7 +50,8 @@
 			} 
 		?>
 			<div class="container-fluid" id="a">
-				<a href="adm_func.php" id="c"><button class="btn btn-info">Voltar</button></a>
+				<a href="adm_func.php" id="c"><button class="btn btn-info">Voltar</button></a><br>
+				<a href="inserir_prof.php"><button type="button"><b>Inserir um novo Professor</button></a><br>
 				<h1>Buscando um professor:</h1>
 			<form name="professor" method="POST">
 				Buscar:

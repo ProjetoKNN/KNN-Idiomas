@@ -28,16 +28,34 @@
 			echo "<button>Inserir Notas</button>";
 			echo "</form>";
 			echo "</td>";
-
-			echo "<td>";
-			echo "<form action='edita_boletim.php' method='POST'>";
-			echo "<input name='cod' type='hidden' value='".$r['CodAluno']."'>";
-			echo "<button>Editar Boletim</button>";
-			echo "</form>";
-			echo "</td>";
-			echo "</tr>";
-			echo "</table>";
+			$CodAluno = $r['CodAluno'];
 		}
+
+			$sql = "SELECT * FROM boletim where aluno_cod = '$CodAluno'";
+
+			$res = mysqli_query($conexao, $sql);
+
+				while ($dados = mysqli_fetch_assoc($res))
+				{
+					for($i = 1; $i <= 6; $i++)
+					{
+	        			//Utiliza de um if para checar se essa nota existe no BD, caso não exista, não irá mostrar nada, apenas as existentes.
+
+	        			if($dados['nota'.$i] != "")
+	        			{
+							echo "<form action='edita_boletim.php' method='POST'>";
+							echo "<input name='nota".$i."' type='hidden' value='".$dados['nota'.$i]."'>";
+							
+	        			}
+	        		}
+	        		echo "<input name='media' type='hidden' value='".$dados['media']."'>";
+	        		echo "<input name='falta' type='hidden' value='".$dados['falta']."'>";
+	        		echo "<input name='rep' type='hidden' value='".$dados['reposicao']."'>";
+	        		echo "<button>Visualizar Boletim</button>";
+					echo "</form>";	
+				}
+
+		
 	?>
 </body>
 </html>
