@@ -4,27 +4,48 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, inicial-scale=1, shrink-to-fit=no">
+	<link rel='stylesheet' href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<!-- Bootstrap CSS -->
-    <link rel="shortcut icon" href="../img/knnlogo.ico">
 </head>
-
+<script>
+	function myFunction() {
+		var x = document.getElementById("txtsenha");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+			}
+		}
+		</script>
 <body>
 	<!-- required: Obriga o usuário a preencher algum campo.-->
-	<div class="container-fluid" id="a">
-
-		<h1>VAI TOMAR NO CU</h1>
-
+	<h1>Login</h1>
+	<div class="LoginForm" id="LoginFormulario">
 		<form name="login_sys" action="verificar.php" method="post">
-
-			<label for="txtnome">Nome: </label><br>
-			<input type="text" name="login_nome" required="true" id="txtnome"><br><br>
-			<label for="txtsenha">Senha: </label><br>
-			<input type="password" name="login_senha" required="true" id="txtsenha"><br><br>
-			<input type="submit" value="LOGAR" class="btn btn-info" id="botao">
-			<input type="reset" value="LIMPAR" class="btn btn-info" id="botao">
-
+			<div class="agile-field-txt">
+				<label for="txtnome">
+					<i class="fa fa-user" aria-hidden="true"></i>Nome:
+				</label><br>
+				<input type="text" name="login_nome" required="true" id="txtnome"><br><br>
+			</div>
+			<label for="txtsenha">
+				<i class="fa fa-envelope" aria-hidden="true"></i>Senha: 
+			</label><br>
+			<input type="password" name="login_senha" required="true" id="txtsenha">
+			<div class="agile_label">
+				<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+				<label class="check" for="check3">Mostrar Senha</label>
+			</div><br><br>
+			<div class="form-end">
+				<input type="submit" value="LOGIN">
+			</div>
+			<div class="clearfix"></div>
 		</form>
-
+		<div class="copy-wthree">
+		<p>© 2018 Portal KNN. Direitos reservados | Design by IM3A
+		</p>
+	</div>
 	</div>
 	<?php
 			if(isset($_GET['status']))
