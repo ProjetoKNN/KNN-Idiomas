@@ -4,7 +4,7 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, inicial-scale=1, shrink-to-fit=no">
-	<link rel='stylesheet' href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<!-- Bootstrap CSS -->
 </head>
