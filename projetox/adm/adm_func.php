@@ -9,9 +9,9 @@
 </head>
 	
 <body class="admFunc">
-	<nav class="navbar navbar-expand-lg bg-danger navbar-dark ">
+	<nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
 		<div class="container">
-			<a class="navbar-brand" id="bv">Bem-Vindo Administrador</a>
+			<a class="navbar-brand" id="bv">Bem-vindo, Administrador</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
 				<span class="navbar-toggler-icon"></span>
 			</button>

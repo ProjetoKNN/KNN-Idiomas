@@ -32,7 +32,7 @@
 		?>
 		<nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
                     <div class="container">
-                        <a class="navbar-brand" id="bv">Bem-Vindo Administrador</a>
+                        <a class="navbar-brand" id="bv">Bem-vindo, Administrador</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -43,11 +43,11 @@
                                         Controles
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="buscar_al.php">Controle de Alunos</a>
-                                        <a class="dropdown-item" href="buscar_prof.php">Controle de Professores</a>
-                                        <a class="dropdown-item" href="buscar_turm.php">Controle de Turmas</a>
-                                        <a class="dropdown-item" href="buscar_curso.php">Controle de Cursos</a>
-                                        <a class="dropdown-item" href="buscar_mat.php">Controle de Matrículas</a>
+                                        <a class="dropdown-item" href="buscar_al.php">Controle de alunos</a>
+                                        <a class="dropdown-item" href="buscar_prof.php">Controle de professores</a>
+                                        <a class="dropdown-item" href="buscar_turm.php">Controle de turmas</a>
+                                        <a class="dropdown-item" href="buscar_curso.php">Controle de cursos</a>
+                                        <a class="dropdown-item" href="buscar_mat.php">Controle de matrículas</a>
                                     </div>
                                 </li>
                             </ul>   
@@ -60,12 +60,12 @@
                 </div>
             </nav>
 		<div class="container" id="divBusca">	
-			<h3 id="h1Busca">Buscando uma Turma:</h3>
+			<h3 id="h1Busca">Buscar turma</h3>
 		<form name="turma" method="POST">
 			<caption>Buscar:</caption>
 			<input type="text" name="busca" placeholder="Informe o termo de busca">
 			<input type="submit" name="buscar" class="btn btn-dark" value="BUSCAR">
-			<a href="inserir_turm.php" id="addAL"><button class="btn btn-dark" type="button">Inserir uma nova Turma</button></a>
+			<a href="inserir_turm.php" id="addAL"><button class="btn btn-dark" type="button">Inserir uma nova turma</button></a>
 		</form><br><br>
 			<caption>Resultado da busca:</caption>
 		<div class="table-responsive table-bordered table-striped">

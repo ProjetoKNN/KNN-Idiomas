@@ -32,7 +32,7 @@
                 ?>
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
                     <div class="container">
-                        <a class="navbar-brand" id="bv">Bem-Vindo Administrador</a>
+                        <a class="navbar-brand" id="bv">Bem-vindo, Administrador</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -43,11 +43,11 @@
                                         Controles
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="buscar_al.php">Controle de Alunos</a>
-                                        <a class="dropdown-item" href="buscar_prof.php">Controle de Professores</a>
-                                        <a class="dropdown-item" href="buscar_turm.php">Controle de Turmas</a>
-                                        <a class="dropdown-item" href="buscar_curso.php">Controle de Cursos</a>
-                                        <a class="dropdown-item" href="buscar_mat.php">Controle de Matrículas</a>
+                                        <a class="dropdown-item" href="buscar_al.php">Controle de alunos</a>
+                                        <a class="dropdown-item" href="buscar_prof.php">Controle de professores</a>
+                                        <a class="dropdown-item" href="buscar_turm.php">Controle de turmas</a>
+                                        <a class="dropdown-item" href="buscar_curso.php">Controle de cursos</a>
+                                        <a class="dropdown-item" href="buscar_mat.php">Controle de matrículas</a>
                                     </div>
                                 </li>
                             </ul>   
@@ -61,12 +61,12 @@
             </nav>
 				<div class="container" id="divBusca">
 			
-					<h3 id="h1Busca">Buscar Aluno:</h3>
+					<h3 id="h1Busca">Buscar aluno</h3>
                         <form name="aluno" method="POST">
                             <caption id="nha">Buscar:</caption>
                             <input type="text" name="busca" id="b" placeholder="Insira o nome completo">        
                             <input type="submit" name="buscar" class="btn btn-dark" value="Buscar">
-                            <a href="inserir_al.php" id="addAL"><button class="btn btn-dark" type="button">Inserir um novo Aluno</button></a>
+                            <a href="inserir_al.php" id="addAL"><button class="btn btn-dark" type="button">Inserir um novo aluno</button></a>
                         </form><br>
                         <caption>Resultado da busca:</caption>
                         <div class='table-responsive table-bordered table-striped'>
