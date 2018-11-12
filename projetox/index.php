@@ -18,35 +18,36 @@
 			}
 		}
 		</script>
-<body>
+<body class="login">
 	<!-- required: Obriga o usuário a preencher algum campo.-->
-	<h1>Login</h1>
-	<div class="LoginForm" id="LoginFormulario">
-		<form name="login_sys" action="verificar.php" method="post">
-			<div class="agile-field-txt">
-				<label for="txtnome">
-					<i class="fa fa-user" aria-hidden="true"></i>Nome:
+		<h1 id="Login">Login</h1>
+		<div class="w3ls-login box box--big" id="LoginFormulario">
+			<form name="login_sys" action="verificar.php" method="post">
+				<div class="agile-field-txt">
+					<label for="txtnome">
+						<i class="fa fa-user" aria-hidden="true"></i>Nome:
+					</label><br>
+					<input type="text" name="login_nome" required="true" id="txtnome"><br><br>
+				</div>
+				<label for="txtsenha">
+					<i class="fa fa-envelope" aria-hidden="true"></i>Senha: 
 				</label><br>
-				<input type="text" name="login_nome" required="true" id="txtnome"><br><br>
+				<input type="password" name="login_senha" required="true" id="txtsenha">
+				<div class="agile_label">
+					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+					<label class="check" for="check3">Mostrar Senha</label>
+				</div><br><br>
+				<div class="w3ls-bot">
+					<div class="form-end">
+						<input type="submit" value="LOGIN">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+			<div class="copy-wthree">
+				<p>© 2018 Portal KNN. Direitos reservados | Design by IM3A</p>
 			</div>
-			<label for="txtsenha">
-				<i class="fa fa-envelope" aria-hidden="true"></i>Senha: 
-			</label><br>
-			<input type="password" name="login_senha" required="true" id="txtsenha">
-			<div class="agile_label">
-				<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
-				<label class="check" for="check3">Mostrar Senha</label>
-			</div><br><br>
-			<div class="form-end">
-				<input type="submit" value="LOGIN">
-			</div>
-			<div class="clearfix"></div>
-		</form>
-		<div class="copy-wthree">
-		<p>© 2018 Portal KNN. Direitos reservados | Design by IM3A
-		</p>
-	</div>
-	</div>
+		</div>
 	<?php
 			if(isset($_GET['status']))
 			{

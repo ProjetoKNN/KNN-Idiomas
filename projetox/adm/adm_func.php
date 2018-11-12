@@ -7,40 +7,64 @@
 	<link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="../css/estilo.css" type="text/css">
 </head>
-	<nav>
-		<a id="bv"><h1>Bem-Vindo Administrador</h1></a>		
-
-		<form action="../login_logout.php" id="sair">
-			<input type="submit" name="sair" value="Sair" class="btn btn-info">
-		</form>
+	
+<body class="admFunc">
+	<nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+		<div class="container">
+			<a class="navbar-brand" id="bv">Bem-Vindo Administrador</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSite">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">
+							Controles
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="buscar_al.php">Controle de Alunos</a>
+							<a class="dropdown-item" href="#">Controle de Professores</a>
+							<a class="dropdown-item" href="#">Controle de Turmas</a>
+							<a class="dropdown-item" href="#">Controle de Cursos</a>
+							<a class="dropdown-item" href="#">Controle de Matrículas</a>
+						</div>
+					</li>
+				</ul>	
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a href="../login_logout.php" class="nav-link" name="sair">Sair</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
 	</nav>
-<body>
-	<div class="container-fluid" id="divprincipal" >	
+	<div class="container" id="divprincipal" >	
 		<div>
 			<div>
-				<a href="buscar_al.php"><button type="button"><b>Controle de Alunos</button></a>
+				<a href="buscar_al.php"><button class="b" type="button">Controle de Alunos</button></a>
 				<hr>
 			</div>
 			<div>
-				<a href="buscar_prof.php"><button type="button"><b>Controle de Professores</button></a>
+				<a href="buscar_prof.php"><button class="b" type="button">Controle de Professores</button></a>
 				<hr>
 			</div>
-			<h3>Gerenciamento de Turma/Cursos:</h3>
 			<div>
-				<a href="inserir_turm.php"><button type="button"><b>Inserir Turmas & Cursos</button></a>
-				<a href="buscar_turm.php"><button type="button""><b>Buscar Turma</button></a>
-				<a href="buscar_curso.php"><button type="button""><b>Buscar Curso</button></a>
+				<a href="buscar_turm.php"><button class="b" type="button"">Controle de Turmas</button></a>
+				
 				<hr>
 			</div>
-			<h3>Gerenciamento de Matrículas:</h3>
 			<div>
-				<a href="inserir_mat.php"><button  type="button"><b>Inserir Matrícula</button></a>
-				<a href="buscar_mat.php"><button type="button"><b>Buscar Matrículas</button></a>
+				<a href="buscar_curso.php"><button class="b" type="button"">Controle de Cursos</button></a>
+				<hr>
+			</div>
+			<div>
+				<a href="buscar_mat.php"><button class="b" type="button">Controle de Matrículas</button></a>
 			</div>
 		</div>
 	</div>
-	<script src="jquery/dist/jquery.js"></script>
+	<script src="../jquery/dist/jquery.js"></script>
     <script src="popper.js/dist/popper.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 				exit;
 			}
 		?>
-		<a href="adm_func.php"><button>Voltar</button></a>
+		<a href="buscar_turm.php"><button>Voltar</button></a>
 		<h2>Inserção de Cursos:</h2>
 		<form method="POST">
 			Nome do curso:

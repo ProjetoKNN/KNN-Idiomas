@@ -4,27 +4,10 @@
     	<title>Busca de Cursos</title>
     	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     </head>
-        <style type="text/css">
-        *{
-            margin: 0;
-            padding: 0;
-            text-align: justify;
-        }
-        table{
-           border:1px solid;
-           padding: 5px;
-        }
-        td{
-            border: 1px solid lightgray;
-            font-size: 1em;
-            padding: 5px
-        }
-        button{
-            padding: 5px
-        }
-        </style>
-            <body>
+            <body class="BuscarAL">
             	<?php 
                     //Área de notificações
                     //Se existe a variável remocao, então
@@ -46,15 +29,53 @@
                             }
                         } 
                 ?>
-                <a href="adm_func.php"><button>Voltar</button></a>
-                <h1>Buscando um Curso:</h1>
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+                        <div class="container">
+                            <a class="navbar-brand" id="bv">Bem-Vindo Administrador</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSite">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">
+                                            Controles
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="buscar_al.php">Controle de Alunos</a>
+                                            <a class="dropdown-item" href="buscar_prof.php">Controle de Professores</a>
+                                            <a class="dropdown-item" href="buscar_turm.php">Controle de Turmas</a>
+                                            <a class="dropdown-item" href="buscar_curso.php">Controle de Cursos</a>
+                                            <a class="dropdown-item" href="buscar_mat.php">Controle de Matrículas</a>
+                                        </div>
+                                    </li>
+                                </ul>   
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a href="adm_func.php" class="nav-link" name="voltar">Voltar</a>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container" id="divBusca">
+                <h3 id="h1Busca">Buscando um Curso:</h3>
                     <form name="curso" method="POST">
-                        Buscar:
+                        <caption>Buscar:</caption>
                         <input type="text" name="busca" placeholder="Informe o termo de busca">
-                        <input type="submit" name="buscar" value="BUSCAR">
-                        <input type="reset" name="limpar" value="LIMPAR">
+                        <input type="submit" name="buscar" class="btn btn-dark" value="BUSCAR">
+                        <a href="inserir_turm.php" id="addAL"><button class="btn btn-dark" type="button">Inserir um novo Curso</button></a>
                     </form><br><br>
                     <caption>Resultado da busca:</caption>
+                    <div class="table-responsive table-bordered table-striped">
+                        <table class="table talbe-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome do curso</th>
+                                    <th>Remoção</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                 <?php 
                     //Estabelece a conexao com o mysql
                     include("../conexao.php");
@@ -77,8 +98,6 @@
 
                             while($dados = mysqli_fetch_assoc($consulta))
                             {
-                                echo "<table>";
-                                echo "<tr><td>Nome do curso</td><td>Remoção</td></tr>";
                                 echo "<tr>";
                                 echo "<td>".$dados['nome']. "</td>";
                                             
@@ -87,13 +106,19 @@
                                 echo "<td>";
                                 echo "<form action='php/remover_curso.php' method='post'>";
                                 echo "<input name='cod' type='hidden' value='" .$dados['cod']. "'>";
-                                echo "<button>Remover</button>";
+                                echo "<button class='btn btn-danger'>Remover</button>";
                                 echo "</form>";
                                 echo "</td>";
                                 echo "</tr>";
-                                echo "</table>";
                             }
                         }
                 ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <script src="../jquery/dist/jquery.js"></script>
+        <script src="popper.js/dist/popper.js"></script>
+        <script src="../js/bootstrap.js"></script>
             </body>
 </html>

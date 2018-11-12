@@ -26,7 +26,7 @@
 	    }
 	?>
 	<body>
-			<a href="adm_func.php"><button>Voltar</button></a>
+			<a href="buscar_mat.php"><button>Voltar</button></a>
 			<h1>Matriculando um aluno:</h1>
 		<form method="POST">
 			Data Matrícula:
