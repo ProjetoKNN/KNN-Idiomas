@@ -20,7 +20,7 @@
 		{
 			//Faz a inserção na tabela frequência, passando o aluno, a aula de hoje, e a situação da presença dele.
 			$query = mysqli_query($conexao, "INSERT INTO frequencia (aluno_cod, aulas_cod, falta) VALUES('$codAl','$aula', '$faluno')");
-			header("location:index_prof.php");
+			header("location:criaraula.php");
 		}
 	}
 

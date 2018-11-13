@@ -23,7 +23,7 @@
         }
         </style>
 <body>
-	<a href="index_prof.php"><button>Voltar</button></a>
+	<a href="criaraula.php"><button>Voltar</button></a>
 	<!-- Manda dados contidos nesse formulário para a página "frequencia.php".-->
 	<form action="frequencia.php" method="POST">
 		<input type="submit" name="inserir" value="INSERIR">

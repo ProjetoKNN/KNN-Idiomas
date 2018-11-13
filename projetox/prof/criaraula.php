@@ -46,7 +46,7 @@
 				}
 		}
 		//Manda o código da aula que foi inserida e o código da turma através de GET.
-		echo "<a href='lancarfrequencia.php?cod=".$num."&codt=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>"
+		echo "<a href='lancarfrequencia.php?cod=".$num."&codt=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>";
 	?>
 </body>
 </html>

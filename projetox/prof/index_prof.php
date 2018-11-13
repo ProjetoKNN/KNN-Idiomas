@@ -51,6 +51,22 @@
 	        $resQuery2 = mysqli_query($conexao, $sql2);
 	        while($res2 = mysqli_fetch_assoc($resQuery2)){
 	        	//Passa o código da turma através de GET, tanto para a página "buscar_turmas.php" como para "criaraula.php" também.
+	        	/*$nha = $res2['codturma'];
+	        	$_SESSION['turminha'] = $nha;
+	        	$nha2 = $res2['nome'];
+	        	$_SESSION['nominho'] = $nha2;
+
+	        	echo $res2['nome'];
+	        	echo "<form action='criaraula.php' method='POST'>";
+	        	echo "<a href='criaraula.php'>"."<button> Lançar aula </button>"."</a><br>";
+	        	$_SESSION['turminha'];
+	        	echo "</form>";
+	        	echo "<form action='buscar_turmas.php' method='POST'>";
+	        	echo "<a href='buscar_turmas.php'>"."<button> Lançar boletim </button>"."</a><br>";
+	        	$_SESSION['turminha'];
+	        	$_SESSION['nominho'];
+	        	echo "</form>";*/
+
 	        	echo "<a href='buscar_turmas.php?cod=".$res2['codturma']."'>".$res2['nome']."</a>";
 	        	echo "<a href='criaraula.php?cod=".$res2['codturma']."'>"." <button>Lançar aula</button>"."</a><br>";
 	    	}

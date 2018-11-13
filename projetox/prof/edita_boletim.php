@@ -1,6 +1,9 @@
 <html>
 	<?php 
 		include("../conexao.php");
+		session_start();
+		$codigo = $_SESSION['turmona'];
+		echo "<a href='buscar_turmas.php?cod=".$codigo."'>"."<button>Voltar</button>"."</a>";
 	?>
 		<head>
 			<title>Editar</title>
@@ -8,8 +11,9 @@
 		</head>
 		<body>
 			</form>
-			<a href="buscar_turmas.php"><button>Voltar</button></a><br>
+			<!-- <a href="buscar_turmas.php?cod=".$codigo."><button>Voltar</button></a><br> -->
 				<?php 
+
 					$nota1 = filter_input(INPUT_POST, 'nota1');
 					$nota2 = filter_input(INPUT_POST, 'nota2');
 					$nota3 = filter_input(INPUT_POST, 'nota3');

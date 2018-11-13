@@ -68,7 +68,6 @@
 									$media = $media/6;
 								}
 						}
-						echo "AKI ".$media;
 
 						$mediax = mysqli_query($conexao, "UPDATE boletim SET media= $media WHERE aluno_cod = $cod");
 					}
