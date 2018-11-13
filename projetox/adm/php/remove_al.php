@@ -10,6 +10,7 @@
     }
     //Executa a query
     $sql = "DELETE FROM aluno WHERE cod=".$cod;
+    echo "AQUI".$sql;
     $remove = mysqli_query($conexao, $sql);
     //Se falhou, redireciona pra buscar_al.php com remove igual a false 
     if(!$remove){

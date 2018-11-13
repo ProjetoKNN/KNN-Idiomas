@@ -29,11 +29,15 @@
 			//Faz a seleção do último cod inserido na tabela aulas.
 			$query1 = "SELECT MAX(cod) FROM aulas";
 
+			
+
 			$cod = mysqli_query($conexao, $query1);
 			$codigo = mysqli_fetch_assoc($cod);
 
 			//Cria um AI manual.
 			$num = $codigo['MAX(cod)']+1;
+
+			echo $num;
 
 			//Faz a inserção da aula na tabela aulas contida no BD.
 			$query = "INSERT INTO aulas(cod, conteudo, dataaula, turma_cod) VALUES ('$num','$conteudo','$dataaula', '$turma')";
@@ -46,7 +50,7 @@
 				}
 		}
 		//Manda o código da aula que foi inserida e o código da turma através de GET.
-		echo "<a href='lancarfrequencia.php?cod=".$num."&codt=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>";
+		echo "<br><a href='lancarfrequencia.php?cod=".$num."&codt=".$turma."'>"." <button>Lançar Frequência</button>"."</a><br>";
 	?>
 </body>
 </html>

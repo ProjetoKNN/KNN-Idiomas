@@ -15,7 +15,6 @@
 		//$turma = $_GET['cod'];
 
 		$_SESSION['turmona'] = $_GET['cod'];
-
 		$turma = $_SESSION['turmona'];
 
 
